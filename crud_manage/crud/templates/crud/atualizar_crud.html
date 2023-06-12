@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Atualizar Cadastro</title>
+  </head>
+  <body style="background-color: #0c151f" class="text-white">
+    {% include 'crud/navbar.html' %}
+    <h1 class="text-center my-3">Atualizar Cadastro</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card bg-info">
+                    <div class="card-body">
+                        <form action="/crud/a-atualizar-crud/{{crud.id}}" method="POST">
+                            {% csrf_token %}
+                            <div class="md-3">
+                                <label for="matricula">Matrícula</label>
+                            <input name="crud_matricula" type="text" id="matricula" style="background-color: #0f1923" class="form-control text-white" placeholder="Digite a Matrícula" required value="{{crud.matricula}}">
+                            </div>
+                            <div class="md-3">
+                                <label for="nome">Nome</label>
+                                <input name="crud_nome" type="text" id="nome" style="background-color: #0f1923" class="form-control text-white" placeholder="Digite o Nome" required value="{{crud.nome}}">
+                            </div>
+                            <div class="md-3">
+                                <label for="email">E-mail</label>
+                                <input name="crud_email" type="text" id="email" style="background-color: #0f1923" class="form-control text-white" placeholder="Digite o E-mail" required value="{{crud.email}}">
+                            </div>
+                            <div class="md-3">
+                                <label for="endereco">Endereço</label>
+                                <textarea name="crud_endereco" id="endereco" rows="5" style="background-color: #0f1923" class="form-control text-white" placeholder="Digite o Endereço">{{crud.endereco}}</textarea>
+                            </div>
+                            <div class="md-3">
+                                <label for="telefone">Telefone</label>
+                                <input name="crud_telefone" type="text" id="telefone" style="background-color: #0f1923" class="form-control text-white" placeholder="Digite o telefone" value="{{crud.telefone}}">
+                            </div>
+                            <div class="container text-center my-2">
+                                <br>
+                                <button class="btn text-white" style="background-color: #0f1923">
+                                    Atualizar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
