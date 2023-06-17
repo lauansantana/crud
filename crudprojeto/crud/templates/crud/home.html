@@ -33,7 +33,7 @@
                   </tr>
                 </thead>
               <tbody>
-                {%for s in crud%}
+                {% for s in crud %}
                 <tr>
                   <td>{{forloop.counter}}</td>
                   <td>{{s.matricula}}</td>
@@ -46,7 +46,7 @@
                     <a href="/crud/atualizar-crud/{{s.id}}" class="btn btn-success md-sm">Atualizar</a>
                   </td>
                 </tr>
-                {%endfor%}
+                {% endfor %}
               </tbody>
             </table>
             </div>
